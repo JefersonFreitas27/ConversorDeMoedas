@@ -9,6 +9,8 @@ function convertValues() {
 
     const dolarValue = 5.35
     const euroValue = 6.20
+    const libraValue = 7.08
+    const btcValue= 488.664
 
     if (selectCurrency.value == "dolar") {
         currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(inputCurrency / dolarValue)
@@ -16,6 +18,14 @@ function convertValues() {
 
     if (selectCurrency.value == "euro") {
         currencyValueConverted.innerHTML = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(inputCurrency / euroValue)
+    }
+
+    if (selectCurrency.value == "libra") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" }).format(inputCurrency / libraValue)
+    }
+
+    if (selectCurrency.value=="bitcoin") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", { style: "currency", currency: "BTC" }).format(inputCurrency / btcValue)
     }
 
 
@@ -35,8 +45,19 @@ function convertValues() {
             currencyName.innerHTML = "Euro"
             currencyImage.src = "./assets/euro.png"
 
-            convertValues()
         }
+
+        if (selectCurrency.value == "libra") {
+            currencyName.innerHTML = "Libra"
+            currencyImage.src = "./assets/libra.png"
+
+            }
+        
+            if (selectCurrency.value=="bitcoin") {
+                currencyName.innerHTML = "Bitcoin"
+                currencyImage.src = "./assets/bitcoin.png"
+            }
+            convertValues()
     }
    
 
